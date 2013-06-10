@@ -17,7 +17,7 @@ class Project < Thor
     else
       puts "short description: #{name} is a #{template}"
     end
-    Dir.glob("../templates/#{template}/*.erb") do |f|
+    Dir.glob("../templates/#{template}/*.tt") do |f|
       output = File.basename(f, '.tt')
       puts "template: #{f}"
       puts "output:   #{id}/#{output}"
