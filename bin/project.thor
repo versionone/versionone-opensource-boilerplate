@@ -1,4 +1,10 @@
 class Project < Thor
+  include Thor::Actions
+
+  def self.source_root
+    File.dirname(__FILE__)
+  end
+
   desc "create TEMPLATE ID NAME", "Create the project boilerplate from TEMPLATE using ID and NAME"
   method_option :shortdesc, :aliases => "-sd", :desc => "Short Description"
   def create(template, id, name)
@@ -10,6 +16,12 @@ class Project < Thor
       puts "short description: #{short_description}"
     else
       puts "short description: #{name} is a #{template}"
+    end
+    Dir.glob("../templates/#{template}/*.erb") do |f|
+      output = File.basename(f, '.tt')
+      puts "template: #{f}"
+      puts "output:   #{id}/#{output}"
+      template(f, "#{id}/#{output}")
     end
   end
 end
