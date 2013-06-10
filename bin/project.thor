@@ -9,8 +9,11 @@ class Project < Thor
   method_option :shortdesc, :aliases => "-sd", :desc => "Short Description"
   def create(template, id, name)
     puts "template: #{template}"
+    @template=template
     puts "id:       #{id}"
+    @id=id
     puts "name:     #{name}"
+    @name=name
     short_description = options[:shortdesc]
     if short_description
       puts "short description: #{short_description}"
