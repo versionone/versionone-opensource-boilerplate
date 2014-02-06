@@ -3,7 +3,7 @@ versionone-opensource-boilerplate
 
 This repository contains boilerplates for items that should be used when creating new opensource projects in GitHub.
 
-# Steps for Creating a New Opensource Repository #
+##Steps for Creating a New Opensource Repository##
 
 1. Log into GitHub
 2. Click to create a new repo.
